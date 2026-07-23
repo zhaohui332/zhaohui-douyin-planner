@@ -4,253 +4,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>兆辉防腐 · 抖音双账号运营规划系统</title>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'PingFang SC','Microsoft YaHei','Helvetica Neue',Arial,sans-serif;background:#0a0a1a;color:#e0e0e0;line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-
-/* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(26,115,232,.12) 0%,transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,107,53,.08) 0%,transparent 60%)}
-.hero-content{position:relative;z-index:1;max-width:800px}
-.hero-badge{display:inline-block;background:rgba(26,115,232,.15);color:#7cafff;padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:20px;border:1px solid rgba(26,115,232,.25)}
-.hero h1{font-size:48px;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,#7cafff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2}
-.hero p{font-size:18px;color:#8899b0;margin-bottom:32px;max-width:600px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
-.btn-primary{background:#1a73e8;color:#fff}
-.btn-primary:hover{background:#1557b0;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,115,232,.3)}
-.btn-outline{background:transparent;color:#7cafff;border:1.5px solid rgba(26,115,232,.4)}
-.btn-outline:hover{background:rgba(26,115,232,.1);border-color:#1a73e8;transform:translateY(-2px)}
-.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.06)}
-.hero-stats .stat-value{font-size:28px;font-weight:700;color:#fff}
-.hero-stats .stat-label{font-size:13px;color:#667799;margin-top:2px}
-
-/* Sections */
-.section{padding:80px 0}
-.section-header{text-align:center;max-width:640px;margin:0 auto 56px}
-.section-header h2{font-size:32px;font-weight:700;color:#fff;margin-bottom:12px}
-.section-header p{color:#8899b0;font-size:16px}
-.section-header .accent{color:#7cafff}
-
-/* Features Grid */
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:28px;transition:all .3s}
-.feature-card:hover{background:rgba(255,255,255,.06);border-color:rgba(26,115,232,.2);transform:translateY(-3px)}
-.feature-card .icon{font-size:36px;margin-bottom:12px}
-.feature-card h3{font-size:17px;color:#fff;margin-bottom:8px}
-.feature-card p{font-size:14px;color:#8899b0;line-height:1.7}
-
-/* Accounts */
-.accounts-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.account-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:32px;transition:all .3s}
-.account-card:hover{background:rgba(255,255,255,.06);transform:translateY(-3px)}
-.account-card .acct-icon{font-size:48px;margin-bottom:12px}
-.account-card h3{font-size:20px;color:#fff;margin-bottom:4px}
-.account-card .acct-tag{font-size:12px;padding:3px 12px;border-radius:12px;display:inline-block;margin-bottom:12px}
-.account-card .acct-tag.ip{background:rgba(26,115,232,.15);color:#7cafff}
-.account-card .acct-tag.factory{background:rgba(255,107,53,.15);color:#ff8a50}
-.account-card ul{list-style:none;padding:0}
-.account-card ul li{padding:5px 0;font-size:14px;color:#8899b0}
-.account-card ul li::before{content:'✓ ';color:#4caf50}
-
-/* Steps */
-.steps{display:flex;flex-direction:column;gap:16px;max-width:700px;margin:0 auto}
-.step{display:flex;gap:20px;align-items:flex-start}
-.step-num{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex-shrink:0}
-.step-num.done{background:rgba(76,175,80,.15);color:#4caf50;border:1px solid rgba(76,175,80,.3)}
-.step-num.next{background:rgba(26,115,232,.15);color:#7cafff;border:1px solid rgba(26,115,232,.3)}
-.step-content h4{font-size:16px;color:#fff;margin-bottom:4px}
-.step-content p{font-size:14px;color:#8899b0}
-.step-content code{background:rgba(255,255,255,.06);padding:2px 8px;border-radius:4px;font-size:13px;color:#7cafff}
-
-/* Tech stack */
-.tech-tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.tech-tag{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:10px 22px;border-radius:8px;font-size:14px;color:#8899b0;transition:all .2s}
-.tech-tag:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(26,115,232,.3)}
-
-/* Footer */
-.footer{text-align:center;padding:40px 0;border-top:1px solid rgba(255,255,255,.06);color:#667799;font-size:13px}
-.footer a{color:#7cafff;text-decoration:none}
-
-/* Responsive */
-@media(max-width:768px){
-  .hero h1{font-size:32px}
-  .hero p{font-size:16px}
-  .hero-stats{gap:20px;flex-wrap:wrap}
-  .features-grid{grid-template-columns:1fr}
-  .accounts-grid{grid-template-columns:1fr}
-  .section{padding:56px 0}
-  .section-header h2{font-size:26px}
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="app">
+  <!-- ─── Sidebar ─── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <strong>兆辉防腐</strong>
+        <small>抖音运营系统</small>
+      </div>
+    </div>
+    <div class="sidebar-user" id="sidebarUser" onclick="showUserSwitcher()">
+      <span class="user-avatar">👤</span>
+      <span class="user-name">未登录</span>
+      <span class="user-switch">▾</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-view="dashboard" onclick="switchView('dashboard')">
+        <span class="nav-icon">📊</span> 工作台
+      </a>
+      <a class="nav-item" data-view="personal-ip" onclick="switchView('personal-ip')">
+        <span class="nav-icon">👨‍🔧</span> 个人IP号
+      </a>
+      <a class="nav-item" data-view="factory-daily" onclick="switchView('factory-daily')">
+        <span class="nav-icon">🏭</span> 工厂日常号
+      </a>
+      <a class="nav-item" data-view="ai-tools" onclick="switchView('ai-tools')">
+        <span class="nav-icon">🤖</span> AI内容工厂
+      </a>
+      <a class="nav-item" data-view="hottopics" onclick="switchView('hottopics')">
+        <span class="nav-icon">🔥</span> 热点追踪
+      </a>
+      <a class="nav-item" data-view="calendar" onclick="switchView('calendar')">
+        <span class="nav-icon">📅</span> 内容日历
+      </a>
+      <a class="nav-item" data-view="analytics" onclick="switchView('analytics')">
+        <span class="nav-icon">📈</span> 数据分析
+      </a>
+      <a class="nav-item" data-view="settings" onclick="switchView('settings')">
+        <span class="nav-icon">⚙️</span> 系统设置
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="time-display" id="timeDisplay">--:--</div>
+      <div class="date-display" id="dateDisplay">----年--月--日</div>
+    </div>
+  </aside>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="container hero-content">
-    <div class="hero-badge">🛡️ 江苏兆辉防腐科技 · 数字化运营工具</div>
-    <h1>抖音双账号<br>运营规划系统</h1>
-    <p>专为工业品抖音团队打造。管理两个账号的每日工作流程、AI内容生成、全网热点追踪，让每个运营人员的工作有条不紊。</p>
-    <div class="hero-buttons">
-      <a href="https://github.com/zhaohui332/zhaohui-douyin-planner" class="btn btn-primary">📦 GitHub 仓库</a>
-      <a href="#features" class="btn btn-outline">🎯 功能介绍</a>
-      <a href="#deploy" class="btn btn-outline">🚀 部署指南</a>
+  <!-- ─── Main Content ─── -->
+  <main class="main-content" id="mainContent">
+    <!-- views are loaded dynamically by JS -->
+  </main>
+</div>
+
+<!-- Login Overlay -->
+<div class="overlay" id="loginOverlay">
+  <div class="overlay-card">
+    <div class="overlay-icon">🛡️</div>
+    <h2>兆辉防腐 · 抖音运营系统</h2>
+    <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px">输入姓名开始使用。每个员工可设置自己的关键词和API密钥。</p>
+    <input type="text" id="loginName" placeholder="输入你的姓名（如：李工、小王）" onkeydown="if(event.key==='Enter')doLogin()">
+    <div id="existingUsersBox" style="margin-top:10px;font-size:13px;color:var(--text-secondary)">
+      已有用户：<span id="existingUsers"></span>
     </div>
-    <div class="hero-stats">
-      <div><div class="stat-value">2</div><div class="stat-label">管理账号</div></div>
-      <div><div class="stat-value">8h</div><div class="stat-label">每日工作规划</div></div>
-      <div><div class="stat-value">4</div><div class="stat-label">AI生成模式</div></div>
-      <div><div class="stat-value">∞</div><div class="stat-label">员工数</div></div>
-    </div>
+    <button class="btn btn-primary" onclick="doLogin()" style="width:100%;justify-content:center;margin-top:12px">👤 进入系统</button>
   </div>
-</section>
+</div>
 
-<!-- Features -->
-<section id="features" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>🎯 核心功能</h2>
-      <p>覆盖抖音运营的完整工作流，从选题策划到数据复盘</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="icon">👥</div>
-        <h3>多员工系统</h3>
-        <p>每个员工独立登录，独立配置API密钥和本周关键词，数据互不干扰</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">📋</div>
-        <h3>每日8小时规划</h3>
-        <p>每个账号细化到每小时的详细工作任务、工具清单、预期产出和运营技巧</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🔑</div>
-        <h3>关键词周计划</h3>
-        <p>输入本周关键词，AI自动为两个账号生成周一到周六的完整内容规划</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🤖</div>
-        <h3>DeepSeek AI</h3>
-        <p>口播脚本生成、实拍文案、爆款标题、追热点方案，四种AI工具一键生成</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🔥</div>
-        <h3>全网热点追踪</h3>
-        <p>追踪抖音全网爆款视频，AI分析爆款结构，一键生成跟拍方案</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">📊</div>
-        <h3>数据分析</h3>
-        <p>数据看板 + 视频数据记录表，追踪每个账号的运营效果</p>
-      </div>
-    </div>
+<!-- User Switcher Overlay -->
+<div class="overlay" id="userSwitcherOverlay" onclick="if(event.target===this)closeUserSwitcher()">
+  <div class="overlay-card" style="max-width:380px">
+    <h3 style="margin-bottom:12px">👤 切换用户</h3>
+    <div id="userSwitcherList"></div>
+    <button class="btn btn-outline" onclick="closeUserSwitcher()" style="width:100%;justify-content:center;margin-top:8px">取消</button>
   </div>
-</section>
+</div>
 
-<!-- Accounts -->
-<section class="section" style="background:rgba(255,255,255,.02)">
-  <div class="container">
-    <div class="section-header">
-      <h2>📱 双账号管理</h2>
-      <p>每个账号都有独立的人设定位和完整的工作流程</p>
-    </div>
-    <div class="accounts-grid">
-      <div class="account-card">
-        <div class="acct-icon">👨‍🔧</div>
-        <h3>个人IP号</h3>
-        <span class="acct-tag ip">江苏兆辉防腐·李工</span>
-        <ul>
-          <li>资深防腐工程师技术专家IP</li>
-          <li>专业但不枯燥的口播内容</li>
-          <li>覆盖技术科普/案例复盘/行业解读</li>
-          <li>8小时精细化日程 + DeepSeek脚本辅助</li>
-        </ul>
-      </div>
-      <div class="account-card">
-        <div class="acct-icon">🏭</div>
-        <h3>工厂日常号</h3>
-        <span class="acct-tag factory">兆辉防腐工厂直击</span>
-        <ul>
-          <li>一线视角真实展示生产全流程</li>
-          <li>实拍为主，画面有力量感</li>
-          <li>覆盖生产流程/发货现场/工艺细节</li>
-          <li>素材管理 + AI文案 + 热点融合</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Deploy -->
-<section id="deploy" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>🚀 快速部署</h2>
-      <p>买一台云服务器，一行命令搞定部署</p>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num done">1</div>
-        <div class="step-content">
-          <h4>购买云服务器</h4>
-          <p>阿里云或腾讯云轻量应用服务器，Ubuntu 22.04，最低 ¥24/月</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num done">2</div>
-        <div class="step-content">
-          <h4>SSH 登录服务器</h4>
-          <p>使用 <code>ssh root@你的服务器IP</code> 登录</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num next">3</div>
-        <div class="step-content">
-          <h4>一键部署</h4>
-          <p>执行以下命令：</p>
-          <p><code>curl -sL https://raw.githubusercontent.com/zhaohui332/zhaohui-douyin-planner/main/outputs/deploy.sh | sudo bash</code></p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num next">4</div>
-        <div class="step-content">
-          <h4>访问系统</h4>
-          <p>浏览器打开 <code>http://你的服务器IP:3456</code>，输入姓名即可使用</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tech Stack -->
-<section class="section" style="background:rgba(255,255,255,.02)">
-  <div class="container">
-    <div class="section-header">
-      <h2>🛠️ 技术栈</h2>
-      <p>纯前端 SPA + Node.js 后端，零外部依赖</p>
-    </div>
-    <div class="tech-tags">
-      <span class="tech-tag">⚡ Node.js</span>
-      <span class="tech-tag">📄 HTML5</span>
-      <span class="tech-tag">🎨 CSS3</span>
-      <span class="tech-tag">📜 Vanilla JS</span>
-      <span class="tech-tag">🤖 DeepSeek API</span>
-      <span class="tech-tag">📁 JSON 存储</span>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <p>江苏兆辉防腐科技有限公司 · 抖音双账号运营规划系统</p>
-    <p style="margin-top:4px">
-      <a href="https://github.com/zhaohui332/zhaohui-douyin-planner">GitHub 仓库</a>
-    </p>
-  </div>
-</footer>
-
+<script src="js/app.js"></script>
 </body>
 </html>
