@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>兆辉防腐 · 抖音双账号运营规划系统</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <!-- ─── Sidebar ─── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">🛡️</div>
+      <div class="brand-text">
+        <strong>兆辉防腐</strong>
+        <small>抖音运营系统</small>
+      </div>
+    </div>
+    <div class="sidebar-user" id="sidebarUser" onclick="showUserSwitcher()">
+      <span class="user-avatar">👤</span>
+      <span class="user-name">未登录</span>
+      <span class="user-switch">▾</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-view="dashboard" onclick="switchView('dashboard')">
+        <span class="nav-icon">📊</span> 工作台
+      </a>
+      <a class="nav-item" data-view="personal-ip" onclick="switchView('personal-ip')">
+        <span class="nav-icon">👨‍🔧</span> 个人IP号
+      </a>
+      <a class="nav-item" data-view="factory-daily" onclick="switchView('factory-daily')">
+        <span class="nav-icon">🏭</span> 工厂日常号
+      </a>
+      <a class="nav-item" data-view="ai-tools" onclick="switchView('ai-tools')">
+        <span class="nav-icon">🤖</span> AI内容工厂
+      </a>
+      <a class="nav-item" data-view="hottopics" onclick="switchView('hottopics')">
+        <span class="nav-icon">🔥</span> 热点追踪
+      </a>
+      <a class="nav-item" data-view="calendar" onclick="switchView('calendar')">
+        <span class="nav-icon">📅</span> 内容日历
+      </a>
+      <a class="nav-item" data-view="analytics" onclick="switchView('analytics')">
+        <span class="nav-icon">📈</span> 数据分析
+      </a>
+      <a class="nav-item" data-view="settings" onclick="switchView('settings')">
+        <span class="nav-icon">⚙️</span> 系统设置
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="time-display" id="timeDisplay">--:--</div>
+      <div class="date-display" id="dateDisplay">----年--月--日</div>
+    </div>
+  </aside>
+
+  <!-- ─── Main Content ─── -->
+  <main class="main-content" id="mainContent">
+    <!-- views are loaded dynamically by JS -->
+  </main>
+</div>
+
+<!-- Login Overlay -->
+<div class="overlay" id="loginOverlay">
+  <div class="overlay-card">
+    <div class="overlay-icon">🛡️</div>
+    <h2>兆辉防腐 · 抖音运营系统</h2>
+    <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px">输入姓名开始使用。每个员工可设置自己的关键词和API密钥。</p>
+    <input type="text" id="loginName" placeholder="输入你的姓名（如：李工、小王）" onkeydown="if(event.key==='Enter')doLogin()">
+    <div id="existingUsersBox" style="margin-top:10px;font-size:13px;color:var(--text-secondary)">
+      已有用户：<span id="existingUsers"></span>
+    </div>
+    <button class="btn btn-primary" onclick="doLogin()" style="width:100%;justify-content:center;margin-top:12px">👤 进入系统</button>
+  </div>
+</div>
+
+<!-- User Switcher Overlay -->
+<div class="overlay" id="userSwitcherOverlay" onclick="if(event.target===this)closeUserSwitcher()">
+  <div class="overlay-card" style="max-width:380px">
+    <h3 style="margin-bottom:12px">👤 切换用户</h3>
+    <div id="userSwitcherList"></div>
+    <button class="btn btn-outline" onclick="closeUserSwitcher()" style="width:100%;justify-content:center;margin-top:8px">取消</button>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
